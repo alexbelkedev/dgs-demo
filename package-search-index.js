@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.example.dgs.demo"},{"l":"com.example.dgs.demo.books.infrastructure.graphql"},{"l":"com.example.dgs.demo.books.model"},{"l":"com.example.dgs.demo.config"}];updateSearchResults();
