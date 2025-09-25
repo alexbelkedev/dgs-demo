@@ -28,7 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-        <dgs.platform.version>9.2.2</dgs.platform.version>
+        <dgs.platform.version>10.4.0</dgs.platform.version>
         <altair.version>11.1.0</altair.version>
 	</properties>
     <dependencyManagement>
@@ -43,6 +43,10 @@
         </dependencies>
     </dependencyManagement>
 	<dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -64,15 +68,28 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
         <dependency>
             <groupId>com.netflix.graphql.dgs</groupId>
-            <artifactId>graphql-dgs-spring-boot-starter</artifactId>
+            <artifactId>graphql-dgs-spring-graphql-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>altair-spring-boot-starter</artifactId>
-            <version>${altair.version}</version>
+            <artifactId>graphql-spring-boot-autoconfigure</artifactId>
+            <version>15.1.0</version> <!-- Jakarta kompatibel -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.graphql-java-kickstart</groupId>
+                    <artifactId>graphql-java-tools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.graphql-java-kickstart</groupId>
+                    <artifactId>graphql-kickstart-spring-webflux</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.graphql-java</groupId>
+                    <artifactId>graphql-java</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 	</dependencies>
 
