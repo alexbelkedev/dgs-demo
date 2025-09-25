@@ -1,28 +1,28 @@
 # DGS Demo App
 
-Eine kleine Demo-Anwendung mit **Spring Boot 3**, **Netflix DGS (GraphQL)** und **Altair UI**.
+A small demo application using **Spring Boot 3**, **Netflix DGS (GraphQL)**, and the **Altair UI**.
 
 ## 🚀 Features
-- GraphQL Endpoint unter `/graphql`
-- Beispiel-Queries und -Mutationen (`books`, `bookById`, `addBook`)
-- Altair Client integriert unter `/altair` (nur im Dev-Profil aktiviert)
+- GraphQL endpoint available at `/graphql`
+- Sample queries and mutations (`books`, `bookById`, `addBook`)
+- Altair client integrated at `/altair` (enabled only in the `dev` profile)
 
-## 📦 Voraussetzungen
+## 📦 Prerequisites
 - Java 21
 - Maven 3.9+
 
-## ▶️ Starten
+## ▶️ Run the App
 ```bash
 ./mvnw spring-boot:run
 ```
 
-Danach erreichbar:
-- GraphQL Endpoint: [http://localhost:8080/graphql](http://localhost:8080/graphql)
+Once started:
+- GraphQL endpoint: [http://localhost:8080/graphql](http://localhost:8080/graphql)
 - Altair UI: [http://localhost:8080/altair](http://localhost:8080/altair)
 
-## 🔍 Beispiel-Queries
+## 🔍 Example Queries
 
-### Alle Bücher abfragen
+### Get all books
 ```graphql
 query {
   books {
@@ -34,7 +34,7 @@ query {
 }
 ```
 
-### Ein Buch nach ID
+### Get a book by ID
 ```graphql
 query {
   bookById(id: "123") {
@@ -44,7 +44,7 @@ query {
 }
 ```
 
-### Neues Buch hinzufügen
+### Add a new book
 ```graphql
 mutation {
   addBook(input: {title: "Refactoring", author: "Martin Fowler", year: 1999}) {
@@ -55,19 +55,19 @@ mutation {
 ```
 
 ## ⚙️ Profiles
-- `dev` → Altair aktiviert
-- `prod` → Altair deaktiviert
+- `dev` → Altair enabled
+- `prod` → Altair disabled
 
 ```bash
 java -jar target/dgs-demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
 ```
 
 ## 🛠️ Troubleshooting
-- **404 bei /altair** → sicherstellen, dass `graphql-spring-boot-autoconfigure` mit Exclusions eingebunden ist und `graphql.altair.enabled=true` gesetzt ist.
-- **Unmapped fields: [Query._service]** → harmlos; kann durch Deaktivieren der Federation entfernt werden (`dgs.graphql.federation.enabled=false`).
-- **CORS-Fehler** (bei externem Frontend) → CORS-Config für `/graphql` hinzufügen.
+- **404 at /altair** → make sure `graphql-spring-boot-autoconfigure` is included with proper exclusions and `graphql.altair.enabled=true` is set.
+- **Unmapped fields: [Query._service]** → harmless; can be removed by disabling Federation (`dgs.graphql.federation.enabled=false`).
+- **CORS errors** (when calling from an external frontend) → add a CORS configuration for `/graphql`.
 
-## 📚 Nützliche Links
+## 📚 Useful Links
 - [Netflix DGS Framework](https://netflix.github.io/dgs/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Altair GraphQL Client](https://altairgraphql.dev/)
