@@ -19,7 +19,7 @@ public class BookDataFetcher {
         Arrays.asList(b1, b2, b3).forEach(b -> db.put(b.id(), b));
     }
 
-    @DgsQuery(field = "books")
+    @DgsQuery
     public List<Book> books(@InputArgument String author) {
         return db.values().stream()
                 .filter(b -> author == null || b.author().toLowerCase().contains(author.toLowerCase()))
