@@ -29,6 +29,7 @@
 	<properties>
 		<java.version>21</java.version>
         <dgs.platform.version>9.2.2</dgs.platform.version>
+        <altair.version>11.1.0</altair.version>
 	</properties>
     <dependencyManagement>
         <dependencies>
@@ -67,6 +68,11 @@
         <dependency>
             <groupId>com.netflix.graphql.dgs</groupId>
             <artifactId>graphql-dgs-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>altair-spring-boot-starter</artifactId>
+            <version>${altair.version}</version>
         </dependency>
 	</dependencies>
 
