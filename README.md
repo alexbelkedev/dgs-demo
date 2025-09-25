@@ -80,3 +80,7 @@ Run the app in `dev` profile:
 - [Netflix DGS Framework](https://netflix.github.io/dgs/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Altair GraphQL Client](https://altairgraphql.dev/)
+
+## 📖 Documentation
+The generated JavaDoc is available at:
+[https://alexbelkedev.github.io/dgs-demo/](https://alexbelkedev.github.io/dgs-demo/)
