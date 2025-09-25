@@ -1,10 +1,8 @@
-package com.example.dgs_demo.books.infrastructure.graphql;
+package com.example.dgs.demo.books.infrastructure.graphql;
 
-import com.example.dgs_demo.books.model.Book;
+import com.example.dgs.demo.books.model.Book;
 import com.netflix.graphql.dgs.*;
 import com.netflix.graphql.dgs.exceptions.DgsEntityNotFoundException;
-import com.netflix.graphql.types.errors.ErrorType;
-
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -21,7 +19,7 @@ public class BookDataFetcher {
         Arrays.asList(b1, b2, b3).forEach(b -> db.put(b.id(), b));
     }
 
-    @DgsQuery
+    @DgsQuery(field = "books")
     public List<Book> books(@InputArgument String author) {
         return db.values().stream()
                 .filter(b -> author == null || b.author().toLowerCase().contains(author.toLowerCase()))
