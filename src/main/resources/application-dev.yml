@@ -1,0 +1,9 @@
+# application-dev.yml
+graphql:
+  altair:
+    enabled: true
+    mapping: /altair
+    options:
+      endpoint-url: /graphql
+    cdn:
+      enabled: true
